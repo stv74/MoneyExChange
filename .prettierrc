@@ -1,0 +1,29 @@
+// Это настройки Prettier. Данный файл нужно расположить в корне проекта (также можно 
+// и в папке со всеми проектами (???)). Полный список опций можно посмотреть по ссылке
+// https://prettier.io/docs/en/options.html
+
+{
+	"arrowParens": "always",
+	"bracketSpacing": true,
+	"endOfLine": "lf",
+	"htmlWhitespaceSensitivity": "css",
+	"insertPragma": false,
+	"jsxBracketSameLine": false,
+	"jsxSingleQuote": false,
+	"printWidth": 80,
+	"proseWrap": "preserve",
+	"quoteProps": "as-needed",
+	"requirePragma": false,
+	"semi": true,
+	"singleQuote": false,
+	"svelteAllowShorthand": true,
+	"svelteBracketNewLine": true,
+	"svelteSortOrder": "scripts-styles-markup",
+	"svelteStrictMode": true,
+	"tabWidth": 4,
+	"trailingComma": "es5",
+	"useTabs": true,
+	"vueIndentScriptAndStyle": false
+}
+
+// Также можно удалить опции, совпадающие с дефолтными настройками плагина.

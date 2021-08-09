@@ -11,7 +11,7 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify-es').default;
 
 // Подключаем модули gulp-sass 
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 
 // Подключаем Autoprefixer
 const autoprefixer = require('gulp-autoprefixer');
@@ -41,11 +41,7 @@ function browsersync() {
 }
 
 function scripts() {
-  return src([ // Берём файлы из источников
-    'src/js/owl.carousel.js',
-    'src/js/jquery.maskedinput.js',
-    'src/js/jquery.validate.js',
-    'src/js/wow.js',
+  return src([ // Берём файлы из источников    
     'src/js/script.js', // Пользовательские скрипты, использующие библиотеки, должны быть подключены в конце
   ])
     .pipe(concat('script.min.js')) // Конкатенируем в один файл
@@ -83,9 +79,7 @@ function cleanimg() {
 function buildcopy() {
 	return src([ // Выбираем нужные файлы
     'src/css/**/*.min.css',
-    'src/js/**/*.min.js',
-		'src/mailer/**/*',
-		'src/fonts/**/*',
+    'src/js/**/*.min.js',		
 		'src/icons/**/*',		
 		], { base: 'src' }) // Параметр "base" сохраняет структуру проекта при копировании
 	.pipe(dest('dist')) // Выгружаем в папку с финальной сборкой

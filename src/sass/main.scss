@@ -2,13 +2,12 @@
 
 // 1. Configuration and helpers
 @import
-  'abstracts/variables',
-  'abstracts/functions',
+  'abstracts/variables',  
   'abstracts/mixins';
 
 // 2. Vendors
 @import
-  'vendors/normalize';
+  'vendors/bootstrap-reboot';
 
 // 3. Base stuff
 @import
@@ -29,7 +28,3 @@
 // 6. Page-specific styles
 @import
   'pages/home';
-
-// 7. Themes
-@import
-  'themes/default';

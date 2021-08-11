@@ -1,0 +1,26 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	&__list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		min-width: 280px;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__link {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 19px;
+		color: #4e5983;
+		text-decoration: none;
+	}
+	&__login {
+		width: 254px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}

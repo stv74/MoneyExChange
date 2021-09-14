@@ -1,4 +1,5 @@
 .navbar {
+	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -18,7 +19,7 @@
 		text-decoration: none;
 	}
 	&__login {
-		width: 254px;
+		width: 233px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;

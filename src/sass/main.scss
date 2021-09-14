@@ -14,11 +14,13 @@
 
 // 4. Layout-related sections
 @import 'layout/header';
+@import 'layout/hero';
 @import 'layout/footer';
 
 // 5. Components
 @import 'components/button';
 @import 'components/navbar';
+@import 'components/select';
 
 // 6. Page-specific styles
 @import 'pages/home';

@@ -1,6 +1,7 @@
 .btn {
-	padding: 18px 13px;
-	font-style: normal;
+	width: 157px;
+	height: 55px;
+	padding: 18px 27px;
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 19px;
@@ -8,4 +9,27 @@
 	text-decoration: none;
 	background-color: rgb(161, 127, 255, 0.11);
 	border-radius: 9px;
+	&:hover {
+		color: #4e5983;
+	}
+	&_submit {
+		border: none;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 17px;
+		color: #ffffff;
+		background: linear-gradient(
+			140.59deg,
+			rgba(86, 46, 194, 0.8) 29.59%,
+			rgba(160, 126, 254, 0.8) 73.59%
+		);
+		&:hover {
+			color: #ffffff;
+		}
+	}
+}
+
+.rotate {
+	border: none;
+	background-color: rgba(255, 255, 255, 0);
 }

@@ -10,7 +10,7 @@ const concat = require('gulp-concat');
 // Подключаем gulp-uglify-es
 const uglify = require('gulp-uglify-es').default;
 
-// Подключаем модули gulp-sass 
+// Подключаем модули gulp-sass
 const sass = require('gulp-sass')(require('sass'));
 
 // Подключаем Autoprefixer
@@ -33,72 +33,78 @@ const del = require('del');
 
 // Определяем логику работы Browsersync
 function browsersync() {
-  browserSync.init({ // Инициализация Browsersync
-    server: { baseDir: 'src/' }, // Указываем папку сервера
-    notify: false, // Отключаем уведомления
-    online: true // Режим работы: true или false
-  })
+	browserSync.init({
+		// Инициализация Browsersync
+		server: { baseDir: 'src/' }, // Указываем папку сервера
+		notify: false, // Отключаем уведомления
+		online: true, // Режим работы: true или false
+	});
 }
 
 function scripts() {
-  return src([ // Берём файлы из источников    
-    'src/js/script.js', // Пользовательские скрипты, использующие библиотеки, должны быть подключены в конце
-  ])
-    .pipe(concat('script.min.js')) // Конкатенируем в один файл
-    .pipe(uglify()) // Сжимаем JavaScript
-    .pipe(dest('src/js/')) // Выгружаем готовый файл в папку назначения
-    .pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
+	return src([
+		// Берём файлы из источников
+		'src/js/ddslick.min.js',
+		'src/js/script.js', // Пользовательские скрипты, использующие библиотеки, должны быть подключены в конце
+	])
+		.pipe(concat('script.min.js')) // Конкатенируем в один файл
+		.pipe(uglify()) // Сжимаем JavaScript
+		.pipe(dest('src/js/')) // Выгружаем готовый файл в папку назначения
+		.pipe(browserSync.stream()); // Триггерим Browsersync для обновления страницы
 }
 
 function styles() {
-  return src('src/sass/**/*.+(scss|sass)') // Выбираем источник
-    .pipe(sass().on('error', sass.logError))
-    .pipe(concat('style.min.css')) // Конкатенируем в файл style.min.css
-    .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true })) // Создадим префиксы с помощью Autoprefixer
-    .pipe(cleancss({ level: { 1: { specialComments: 0 } }/* , format: 'beautify' */ })) // Минифицируем стили
-    .pipe(dest('src/css/')) // Выгрузим результат в папку "src/css/"
-    .pipe(browserSync.stream()) // Сделаем инъекцию в браузер
+	return src('src/sass/**/*.+(scss|sass)') // Выбираем источник
+		.pipe(sass().on('error', sass.logError))
+		.pipe(concat('style.min.css')) // Конкатенируем в файл style.min.css
+		.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true })) // Создадим префиксы с помощью Autoprefixer
+		.pipe(cleancss({ level: { 1: { specialComments: 0 } } /* , format: 'beautify' */ })) // Минифицируем стили
+		.pipe(dest('src/css/')) // Выгрузим результат в папку "src/css/"
+		.pipe(browserSync.stream()); // Сделаем инъекцию в браузер
 }
 
 function html() {
-  return src('src/**/*.html')
-    .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(dest('dist/'))    
+	return src('src/**/*.html')
+		.pipe(htmlmin({ collapseWhitespace: true }))
+		.pipe(dest('dist/'));
 }
 
 function images() {
-	return src('src/images/**/*') // Берём все изображения из папки источника	
-	.pipe(imagemin()) // Сжимаем и оптимизируем изображеня
-	.pipe(dest('dist/images/')) // Выгружаем оптимизированные изображения в папку назначения
+	return src('src/images/**/*') // Берём все изображения из папки источника
+		.pipe(imagemin()) // Сжимаем и оптимизируем изображеня
+		.pipe(dest('dist/images/')); // Выгружаем оптимизированные изображения в папку назначения
 }
 
 function cleanimg() {
-	return del('dist/images/**/*', { force: true }) // Удаляем всё содержимое папки "dist/images/"
+	return del('dist/images/**/*', { force: true }); // Удаляем всё содержимое папки "dist/images/"
 }
 
 function buildcopy() {
-	return src([ // Выбираем нужные файлы
-    'src/css/**/*.min.css',
-    'src/js/**/*.min.js',		
-		'src/icons/**/*',		
-		], { base: 'src' }) // Параметр "base" сохраняет структуру проекта при копировании
-	.pipe(dest('dist')) // Выгружаем в папку с финальной сборкой
+	return src(
+		[
+			// Выбираем нужные файлы
+			'src/css/**/*.min.css',
+			'src/js/**/*.min.js',
+			'src/icons/**/*',
+		],
+		{ base: 'src' }
+	) // Параметр "base" сохраняет структуру проекта при копировании
+		.pipe(dest('dist')); // Выгружаем в папку с финальной сборкой
 }
 
 function cleandist() {
-	return del('dist/**/*', { force: true }) // Удаляем всё содержимое папки "dist/"
+	return del('dist/**/*', { force: true }); // Удаляем всё содержимое папки "dist/"
 }
 
 function startwatch() {
+	// Выбираем все файлы JS в проекте, а затем исключим с суффиксом .min.js
+	watch(['src/**/*.js', '!src/**/*.min.js'], scripts);
 
-  // Выбираем все файлы JS в проекте, а затем исключим с суффиксом .min.js
-  watch(['src/**/*.js', '!src/**/*.min.js'], scripts);
+	// Мониторим файлы препроцессора на изменения
+	watch('src/sass/**/*.+(scss|sass|css)', styles);
 
-  // Мониторим файлы препроцессора на изменения
-  watch('src/sass/**/*.+(scss|sass|css)', styles);
-
-  // Мониторим файлы HTML на изменения
-  watch('src/**/*.html', html).on('change', browserSync.reload);  
+	// Мониторим файлы HTML на изменения
+	watch('src/**/*.html', html).on('change', browserSync.reload);
 }
 
 // Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.

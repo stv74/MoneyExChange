@@ -6,4 +6,7 @@ $(document).ready(function () {
 			console.log(selectedData);
 		},
 	});
+	$('.hero__select').select2({
+		minimumResultsForSearch: Infinity,
+	});
 });

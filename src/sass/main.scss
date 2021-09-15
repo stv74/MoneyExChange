@@ -6,6 +6,10 @@
 
 // 2. Vendors
 @import 'vendors/bootstrap-reboot';
+@import 'vendors/select2.min';
+
+// Vendors-extensions
+@import 'vendors-extensions/select2';
 
 // 3. Base stuff
 @import 'base/base';

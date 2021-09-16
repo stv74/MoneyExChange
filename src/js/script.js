@@ -1,12 +1,24 @@
 $(document).ready(function () {
-	$('#currency-1').ddslick({
-		width: 116,
-		background: 'background-color: rgba(255, 255, 255, 0)',
-		onSelected: function (selectedData) {
-			console.log(selectedData);
-		},
-	});
+	// Подключаем скрипт Select2 для вставки картинок в выпадающие списки
+	function formatState(state) {
+		if (!state.id) {
+			return state.text;
+		}
+		var baseUrl = '/icons/currencies';
+		var $state = $(
+			'<span><img src="' +
+				baseUrl +
+				'/' +
+				state.element.value.toLowerCase() +
+				'.svg" class="img-flag" /> ' +
+				state.text +
+				'</span>'
+		);
+		return $state;
+	}
 	$('.hero__select').select2({
 		minimumResultsForSearch: Infinity,
+		templateResult: formatState,
+		templateSelection: formatState,
 	});
 });

@@ -44,7 +44,6 @@ function browsersync() {
 function scripts() {
 	return src([
 		// Берём файлы из источников
-		'src/js/ddslick.min.js',
 		'src/js/select2.min.js',
 		'src/js/script.js', // Пользовательские скрипты, использующие библиотеки, должны быть подключены в конце
 	])

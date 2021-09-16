@@ -109,31 +109,15 @@
 							<label for="receive">Сумма</label>
 							<input id="give" type="text" name="currency-1" placeholder="0.00" />
 							<div class="hero__input-del"></div>
-							<select id="currency-1" name="currency-1">
-								<option value="0" data-imagesrc="icons/currencies/Yandex.svg">
-									RUB
-								</option>
-								<option value="1" data-imagesrc="icons/currencies/Sberbank.svg">
-									RUB
-								</option>
-								<option value="2" data-imagesrc="icons/currencies/Qiwi.svg">
-									RUB
-								</option>
-								<option value="3" data-imagesrc="icons/currencies/Privat24.svg">
-									UAH
-								</option>
-								<option value="4" data-imagesrc="icons/currencies/PM.svg">
-									USD
-								</option>
-								<option value="5" data-imagesrc="icons/currencies/Paypal.svg">
-									USD
-								</option>
-								<option value="6" data-imagesrc="icons/currencies/Ethereum.svg">
-									ETC
-								</option>
-								<option value="7" data-imagesrc="icons/currencies/Bitcoin.svg">
-									BTC
-								</option>
+							<select class="hero__select" name="currency-1">
+								<option value="yandex">RUB</option>
+								<!-- <option value="sberbank">RUB</option> -->
+								<option value="qiwi">RUB</option>
+								<option value="privat24" selected>UAH</option>
+								<option value="paypal">USD</option>
+								<option value="pm">USD</option>
+								<option value="ethereum">ETC</option>
+								<option value="bitcoin">BTC</option>
 							</select>
 							<button type="button" class="rotate">
 								<img src="icons/button-rotate.png" alt="" />
@@ -142,13 +126,13 @@
 							<div class="hero__input-del"></div>
 							<select class="hero__select" name="currency-2">
 								<option value="yandex">RUB</option>
-								<option value="sb">RUB</option>
+								<!-- <option value="sberbank">RUB</option> -->
 								<option value="qiwi">RUB</option>
-								<option value="p24" selected>UAH</option>
+								<option value="privat24" selected>UAH</option>
 								<option value="paypal">USD</option>
 								<option value="pm">USD</option>
-								<option value="eth">ETC</option>
-								<option value="btc">BTC</option>
+								<option value="ethereum">ETC</option>
+								<option value="bitcoin">BTC</option>
 							</select>
 							<button class="btn btn_submit hero__submit">Обменять</button>
 						</form>

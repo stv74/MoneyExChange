@@ -104,7 +104,7 @@ function startwatch() {
 	watch('src/sass/**/*.+(scss|sass|css)', styles);
 
 	// Мониторим файлы HTML на изменения
-	watch('src/**/*.html', html).on('change', browserSync.reload);
+	watch('src/**/*.html').on('change', browserSync.reload);
 }
 
 // Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.

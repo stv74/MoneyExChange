@@ -17,7 +17,7 @@ $(document).ready(function () {
 		return $state;
 	}
 	$('.hero__select').select2({
-		minimumResultsForSearch: Infinity,
+		minimumResultsForSearch: Infinity, // Убираем форму поиска из списка
 		templateResult: formatState,
 		templateSelection: formatState,
 	});

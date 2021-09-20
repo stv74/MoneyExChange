@@ -72,9 +72,10 @@
 	&__form {
 		grid-column: 1/3;
 		display: grid;
-		grid-template-columns: 171px 3px 116px 111px 171px 3px 116px 226px;
+		grid-template-columns: 171px 116px 111px 171px 116px 226px;
 		// grid-template-rows: repeat(2, 1fr);
 		// align-items: center;
+		position: relative;
 		label {
 			font-weight: normal;
 			font-size: 14px;
@@ -87,43 +88,40 @@
 				grid-column: 5/9;
 			}
 		}
-		input,
-		select {
-			border: none;
-			// border-bottom: solid 2px rgba(214, 220, 226, 0.25);
-			// border-bottom: 1px solid #000;
-			background-color: rgba(255, 255, 255, 0);
-			&:focus {
-				outline: none;
-			}
-		}
 		input {
+			border: none;
+			border-bottom: solid 2px rgba(214, 220, 226, 0.25);
+			background-color: rgba(255, 255, 255, 0);
 			font-weight: 400;
 			font-size: 20px;
 			line-height: 24px;
 			letter-spacing: 0.015em;
 			color: #094067;
+			&:focus {
+				outline: none;
+			}
 			&::placeholder {
 				color: rgba(78, 89, 131, 0.5);
 				font-size: 20px;
 			}
 		}
-		select {
-			// height: 55px;
-			font-style: normal;
-			font-weight: 300;
-			font-size: 16px;
-			line-height: 19px;
-			color: #4e5983;
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			width: 1px;
+			height: 25px;
+			background-color: #cfd4da;
+			top: 32px;
+		}
+		&::before {
+			left: 174px;
+		}
+		&::after {
+			left: 574px;
 		}
 	}
 	&__submit {
 		justify-self: end;
-	}
-	&__input-del {
-		width: 1px;
-		height: 25px;
-		background-color: #cfd4da;
-		align-self: center;
 	}
 }

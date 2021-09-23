@@ -99,45 +99,41 @@
 				<h1 class="hero__title">Мультивалютный обменный сервис 24/7</h1>
 				<div class="hero__subtitle">Быстрый обмен без скрытых комиссий</div>
 				<div class="hero__change-block">
-					<div class="hero__wrapper">
+					<form action="#" class="hero__form">
 						<div class="hero__form-title">Вы отдаете</div>
+						<label for="give">Сумма</label>
+						<input id="give" type="text" name="currency-1" placeholder="0.00" />
+						<select class="hero__select" name="currency-1">
+							<option value="yandex">RUB</option>
+							<option value="qiwi">RUB</option>
+							<option value="privat24" selected>UAH</option>
+							<option value="paypal">USD</option>
+							<option value="pm">USD</option>
+							<option value="ethereum">ETC</option>
+							<option value="bitcoin">BTC</option>
+						</select>
+						<button type="button" class="rotate">
+							<img src="icons/button-rotate.png" alt="" />
+						</button>
 						<div class="hero__form-title">
 							Вы получаете <span>c учетом комиссии ПС (0.5%)</span>
 						</div>
-						<form action="#" class="hero__form">
-							<label for="give">Сумма</label>
-							<label for="receive">Сумма</label>
-							<input id="give" type="text" name="currency-1" placeholder="0.00" />
-							<select class="hero__select" name="currency-1">
-								<option value="yandex">RUB</option>
-								<!-- <option value="sberbank">RUB</option> -->
-								<option value="qiwi">RUB</option>
-								<option value="privat24" selected>UAH</option>
-								<option value="paypal">USD</option>
-								<option value="pm">USD</option>
-								<option value="ethereum">ETC</option>
-								<option value="bitcoin">BTC</option>
-							</select>
-							<button type="button" class="rotate">
-								<img src="icons/button-rotate.png" alt="" />
-							</button>
-							<input id="receive" type="text" name="currency-2" placeholder="0.00" />
-							<select class="hero__select" name="currency-2">
-								<option value="yandex">RUB</option>
-								<!-- <option value="sberbank">RUB</option> -->
-								<option value="qiwi">RUB</option>
-								<option value="privat24" selected>UAH</option>
-								<option value="paypal">USD</option>
-								<option value="pm">USD</option>
-								<option value="ethereum">ETC</option>
-								<option value="bitcoin">BTC</option>
-							</select>
-							<button class="btn btn_submit hero__submit">Обменять</button>
-						</form>
-					</div>
+						<label for="receive">Сумма</label>
+						<input id="receive" type="text" name="currency-2" placeholder="0.00" />
+						<select class="hero__select" name="currency-2">
+							<option value="yandex">RUB</option>
+							<option value="qiwi">RUB</option>
+							<option value="privat24" selected>UAH</option>
+							<option value="paypal">USD</option>
+							<option value="pm">USD</option>
+							<option value="ethereum">ETC</option>
+							<option value="bitcoin">BTC</option>
+						</select>
+						<button class="btn btn_submit hero__submit">Обменять</button>
+					</form>
 				</div>
-				<!-- <div class="hero__band-1"></div>
-				<div class="hero__band-2"></div> -->
+				<div class="hero__band-1"></div>
+				<div class="hero__band-2"></div>
 			</div>
 		</section>
 		<!-- / Hero -->

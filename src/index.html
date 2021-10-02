@@ -72,21 +72,26 @@
 		<header class="header">
 			<div class="container">
 				<div class="navbar">
-					<a href="#"><img src="images/logo.png" alt="Logo" class="navbar__logo" /></a>
-					<nav>
+					<a href="#" class="navbar__logo"><img src="images/logo.png" alt="Logo" /></a>
+					<nav class="navbar__menu">
 						<ul class="navbar__list">
-							<li>
+							<li class="navbar__item">
 								<a class="navbar__link" href="#">Компания</a>
 							</li>
-							<li><a class="navbar__link" href="#">Блог</a></li>
-							<li>
+							<li class="navbar__item"><a class="navbar__link" href="#">Блог</a></li>
+							<li class="navbar__item">
 								<a class="navbar__link" href="#">Контакты</a>
 							</li>
 						</ul>
+						<div class="navbar__login">
+							<a href="#" class="navbar__link navbar__item">Вход</a>
+							<a href="#" class="btn-reg navbar__item">Регистрация</a>
+						</div>
 					</nav>
-					<div class="navbar__login">
-						<a href="#" class="navbar__link">Вход</a>
-						<a href="#" class="btn">Регистрация</a>
+					<div class="navbar__hamburger">
+						<span></span>
+						<span></span>
+						<span></span>
 					</div>
 				</div>
 			</div>
@@ -112,7 +117,7 @@
 							<option value="ethereum">ETC</option>
 							<option value="bitcoin">BTC</option>
 						</select>
-						<button type="button" class="rotate">
+						<button type="button" class="btn-rotate hero__rotate">
 							<img src="icons/button-rotate.png" alt="" />
 						</button>
 						<div class="hero__form-title">
@@ -129,11 +134,11 @@
 							<option value="ethereum">ETC</option>
 							<option value="bitcoin">BTC</option>
 						</select>
-						<button class="btn btn_submit hero__submit">Обменять</button>
+						<button class="btn-submit hero__submit">Обменять</button>
 					</form>
 				</div>
-				<div class="hero__band-1"></div>
-				<div class="hero__band-2"></div>
+				<!-- <div class="hero__band-1"></div>
+				<div class="hero__band-2"></div> -->
 			</div>
 		</section>
 		<!-- / Hero -->

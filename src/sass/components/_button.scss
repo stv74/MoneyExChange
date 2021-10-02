@@ -1,19 +1,35 @@
 .btn {
-	width: 157px;
-	height: 55px;
-	padding: 18px 27px;
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 19px;
-	color: #4e5983;
-	text-decoration: none;
-	background-color: rgb(161, 127, 255, 0.11);
-	border-radius: 9px;
-	&:hover {
+	&-reg {
+		width: 157px;
+		height: 55px;
+		text-align: center;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 55px;
 		color: #4e5983;
+		text-decoration: none;
+		background-color: rgb(161, 127, 255, 0.11);
+		border-radius: 9px;
+		&:hover {
+			color: #4e5983;
+		}
+		@media (max-width: 992px) {
+			height: 0;
+			font-weight: 400;
+			font-size: 20px;
+			line-height: 19px;
+			color: #ffffff;
+			background: none;
+			&:hover {
+				color: #ffffff;
+			}
+		}
 	}
-	&_submit {
+	&-submit {
+		width: 157px;
+		height: 55px;
 		border: none;
+		border-radius: 9px;
 		font-weight: bold;
 		font-size: 14px;
 		line-height: 17px;
@@ -28,9 +44,8 @@
 			color: #ffffff;
 		}
 	}
-}
-
-.rotate {
-	border: none;
-	background-color: rgba(255, 255, 255, 0);
+	&-rotate {
+		border: none;
+		background-color: rgba(255, 255, 255, 0);
+	}
 }

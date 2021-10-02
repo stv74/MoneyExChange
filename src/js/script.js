@@ -21,4 +21,23 @@ $(document).ready(function () {
 		templateResult: formatState,
 		templateSelection: formatState,
 	});
+
+	// Скрипт меню-гамбургера
+	window.addEventListener('DOMContentLoaded', () => {
+		const menu = document.querySelector('.navbar__menu'),
+			menuItem = document.querySelectorAll('.navbar__item'),
+			hamburger = document.querySelector('.navbar__hamburger');
+
+		hamburger.addEventListener('click', () => {
+			hamburger.classList.toggle('navbar__hamburger_active');
+			menu.classList.toggle('navbar__list_active');
+		});
+
+		menuItem.forEach((item) => {
+			item.addEventListener('click', () => {
+				hamburger.classList.toggle('navbar__hamburger_active');
+				menu.classList.toggle('navbar__list_active');
+			});
+		});
+	});
 });

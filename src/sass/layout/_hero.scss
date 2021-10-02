@@ -27,17 +27,13 @@
 	&__change-block {
 		max-width: 1109px;
 		margin: 56px auto 0;
-		padding: 76px 0 76px 103px;
+		padding: 76px 85px 76px 103px;
 		background-color: rgba(255, 255, 255, 0.8);
 		border: 4px solid #f7f8fd;
 		border-radius: 26px;
-		@media (max-width: 1200px) {
-			width: 955px;
-			padding-left: 68px;
-		}
 		@media (max-width: 992px) {
-			width: 748px;
-			padding-left: 28px;
+			padding-left: 53px;
+			padding-right: 43px;
 		}
 	}
 	&__band-1,
@@ -51,9 +47,9 @@
 		width: 1038px;
 		height: 19px;
 		margin: 0 auto;
-		@media (max-width: 1200px) {
-			width: 885px;
-		}
+		// @media (max-width: 1200px) {
+		// 	width: 885px;
+		// }
 	}
 	&__band-2 {
 		position: absolute;
@@ -66,27 +62,16 @@
 			width: 757px;
 		}
 	}
-	// &__form-title {
-	// 	font-weight: 500;
-	// 	font-size: 18px;
-	// 	line-height: 21px;
-	// 	color: #4e5983;
-	// 	span {
-	// 		font-weight: 400;
-	// 		font-size: 12px;
-	// 		line-height: 14px;
-	// 		color: #4e5983;
-	// 		margin-left: 15px;
-	// 		opacity: 0.5;
-	// 	}
-	// }
 	&__form {
 		display: grid;
 		grid-template-areas:
 			'title-1 title-1 title-1 title-2 title-2 title-2'
 			'label-1 label-1 label-1 label-2 label-2 label-2'
 			'input-1 select-1 button-1 input-2 select-2 button-2';
-		grid-template-columns: 171px 116px 111px 171px 116px 232px;
+		grid-template-columns: minmax(100px, 171px) 116px minmax(55px, 111px) minmax(100px, 171px) 116px minmax(
+				180px,
+				232px
+			);
 		grid-template-rows: 56px 17px 55px;
 		position: relative;
 		&-title {
@@ -103,6 +88,9 @@
 				margin-left: 15px;
 				opacity: 0.5;
 			}
+			// @media (max-width: 992px) {
+			// 	font-size: 16px;
+			// }
 		}
 		&-title ~ &-title {
 			grid-area: title-2;
@@ -151,7 +139,7 @@
 			width: 1px;
 			height: 25px;
 			background-color: #cfd4da;
-			top: 32px;
+			top: 88px;
 		}
 		&::before {
 			left: 174px;
@@ -162,15 +150,18 @@
 				left: 530px;
 			}
 		}
-		@media (max-width: 1200px) {
-			grid-template-columns: 171px 116px 67px 171px 116px 197px;
-		}
-		@media (max-width: 992px) {
-			grid-template-columns: 171px 116px 67px 171px 116px;
-		}
+		// @media (max-width: 1200px) {
+		// 	grid-template-columns: 171px 116px 67px 171px 116px 197px;
+		// }
+		// @media (max-width: 992px) {
+		// 	grid-template-columns: 100px 116px 67px 100px 116px 180px;
+		// }
 	}
 	&__submit {
 		grid-area: button-2;
 		justify-self: end;
+	}
+	&__rotate {
+		grid-area: button-1;
 	}
 }

@@ -1,7 +1,6 @@
 .hero {
 	position: relative;
-	min-height: 755px;
-	padding-top: 114px;
+	padding: 114px 0 120px;
 	background: url('../images/Promo-bg.jpg') center (center/cover) no-repeat;
 	&__title {
 		font-weight: bold;
@@ -18,6 +17,10 @@
 		@media (max-width: 992px) {
 			font-size: 34px;
 		}
+		@media (max-width: 768px) {
+			font-size: 30px;
+			line-height: 47px;
+		}
 	}
 	&__subtitle {
 		margin-top: 94px;
@@ -26,6 +29,9 @@
 		line-height: 23px;
 		color: #ffffff;
 		text-align: center;
+		@media (max-width: 768px) {
+			margin-top: 64px;
+		}
 	}
 	&__change-block {
 		position: relative;
@@ -35,6 +41,11 @@
 		background-color: rgba(255, 255, 255, 0.8);
 		border: 4px solid #f7f8fd;
 		border-radius: 26px;
+		@media (max-width: 768px) {
+			max-width: 650px;
+			padding-top: 56px;
+			padding-bottom: 56px;
+		}
 	}
 	&__band-1,
 	&__band-2 {
@@ -43,24 +54,20 @@
 		opacity: 0.2;
 		border: 4px solid #f7f8fd;
 		border-radius: 0px 0px 26px 26px;
+		top: 283px;
+		left: 50%;
+		transform: translateX(-50%);
+		@media (max-width: 768px) {
+			top: 521px;
+		}
 	}
 	&__band-1 {
 		width: 93.5%;
 		height: 19px;
-		top: 283px;
-		left: 50%;
-		transform: translateX(-50%);
 	}
 	&__band-2 {
-		position: absolute;
-		width: 933px;
+		width: 84%;
 		height: 38px;
-		top: 640px;
-		left: 50%;
-		transform: translate(-50%);
-		@media (max-width: 1200px) {
-			width: 757px;
-		}
 	}
 	&__form {
 		display: grid;
@@ -73,7 +80,6 @@
 				232px
 			);
 		grid-template-rows: 56px 17px 55px;
-		position: relative;
 		&-title {
 			grid-area: title-1;
 			font-weight: 500;
@@ -88,9 +94,6 @@
 				margin-left: 15px;
 				opacity: 0.5;
 			}
-			// @media (max-width: 992px) {
-			// 	font-size: 16px;
-			// }
 		}
 		&-title ~ &-title {
 			grid-area: title-2;
@@ -150,12 +153,35 @@
 		select ~ select {
 			grid-area: select-2;
 		}
+		@media (max-width: 768px) {
+			grid-template-areas:
+				'title-1 title-1'
+				'label-1 label-1'
+				'input-1 select-1'
+				'button-1 button-1'
+				'title-2 title-2'
+				'label-2 label-2'
+				'input-2 select-2'
+				'button-2 button-2';
+			grid-template-columns: minmax(90px, 250px) 116px;
+			grid-template-rows: repeat(2, 56px 17px 55px 75px);
+			justify-content: center;
+		}
 	}
 	&__submit {
 		grid-area: button-2;
 		justify-self: end;
+		@media (max-width: 768px) {
+			place-self: end center;
+		}
 	}
 	&__rotate {
 		grid-area: button-1;
+		@media (max-width: 768px) {
+			transform: rotate(90deg);
+		}
+	}
+	@media (max-width: 768px) {
+		padding: 84px 0 100px;
 	}
 }

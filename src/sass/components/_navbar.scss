@@ -9,6 +9,9 @@
 		img {
 			width: 100%;
 		}
+		@media (max-width: 576px) {
+			width: 200px;
+		}
 	}
 	&__menu {
 		display: flex;
@@ -121,6 +124,9 @@
 					}
 				}
 			}
+		}
+		@media (max-width: 576px) {
+			right: 6px;
 		}
 	}
 }

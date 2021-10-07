@@ -1,7 +1,11 @@
 .hero {
 	position: relative;
-	padding: 114px 0 120px;
-	background: url('../images/Promo-bg.jpg') center (center/cover) no-repeat;
+	padding-bottom: 130px;
+	&__outer {
+		padding: 114px 0 120px;
+		background: url('../images/Promo-bg.jpg') center (center/cover) no-repeat;
+		box-shadow: 0 70px 30px 40px rgba(239, 242, 250, 0.8);
+	}
 	&__title {
 		font-weight: bold;
 		font-size: 60px;

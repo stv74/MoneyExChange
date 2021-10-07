@@ -1,7 +1,29 @@
 .benefits {
-	padding: 100px 0 118px;
-	background: linear-gradient(180deg, #eff2fa 5%, rgba(255, 255, 255, 0) 15%);
+	padding-bottom: 118px;
 	&__wrapper {
+		max-width: 1240px;
+		margin: 0 auto;
+		padding: 0 56px 0;
 		display: flex;
+		justify-content: space-between;
+	}
+	&__item {
+		max-width: 315px;
+		img {
+			margin-bottom: 50px;
+		}
+	}
+	&__title {
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 26px;
+		margin: 0 0 32px 5px;
+	}
+	&__descr {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 166.5%;
+		opacity: 0.7;
+		margin-left: 5px;
 	}
 }

@@ -5,6 +5,9 @@
 		padding: 114px 0 120px;
 		background: url('../images/Promo-bg.jpg') center (center/cover) no-repeat;
 		box-shadow: 0 70px 30px 40px rgba(239, 242, 250, 0.8);
+		@media (max-width: 768px) {
+			box-shadow: 0 50px 30px 40px rgba(239, 242, 250, 0.8);
+		}
 	}
 	&__title {
 		font-weight: bold;
@@ -194,6 +197,6 @@
 		}
 	}
 	@media (max-width: 768px) {
-		padding: 84px 0 100px;
+		padding-bottom: 100px;
 	}
 }

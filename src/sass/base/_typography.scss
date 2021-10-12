@@ -1,4 +1,11 @@
 body {
-	font-family: "Rubik", sans-serif;
+	font-family: 'Rubik', sans-serif;
 	color: $text-color-main;
+}
+
+.title {
+	font-weight: 500;
+	font-size: 35px;
+	line-height: 46px;
+	color: #160647;
 }

@@ -1,0 +1,17 @@
+.reserve {
+	padding-top: 423px;
+	background: linear-gradient(180deg, #eff2fa 0%, rgba(255, 255, 255, 0) 650px) no-repeat;
+	&__title {
+		text-align: center;
+		line-height: 39px;
+	}
+	&__wrapper {
+		max-width: 1118px;
+		display: grid;
+		grid-template-columns: repeat(4, minmax(180px, 230px));
+		grid-template-rows: repeat(2, 54px);
+		column-gap: 66px;
+		row-gap: 85px;
+		margin: 59px auto 0;
+	}
+}

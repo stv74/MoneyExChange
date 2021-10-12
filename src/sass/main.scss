@@ -20,11 +20,13 @@
 @import 'layout/header';
 @import 'layout/hero';
 @import 'layout/benefits';
+@import 'layout/reserve';
 @import 'layout/footer';
 
 // 5. Components
 @import 'components/button';
 @import 'components/navbar';
+// @import 'components/title';
 
 // 6. Page-specific styles
 @import 'pages/home';

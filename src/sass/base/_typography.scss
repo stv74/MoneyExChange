@@ -8,4 +8,16 @@ body {
 	font-size: 35px;
 	line-height: 46px;
 	color: #160647;
+	@media (max-width: 1200px) {
+		font-size: 30px;
+		line-height: 42px;
+	}
+	@media (max-width: 992px) {
+		font-size: 26px;
+		line-height: 38px;
+	}
+	@media (max-width: 576px) {
+		font-size: 20px;
+		line-height: 32px;
+	}
 }

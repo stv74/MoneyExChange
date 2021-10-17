@@ -1,6 +1,9 @@
 .reserve {
 	padding: 423px 0 90px 0;
 	background: linear-gradient(180deg, #eff2fa 0%, rgba(255, 255, 255, 0) 650px) no-repeat;
+	@media (max-width: 1200px) {
+		padding-top: 300px;
+	}
 	&__title {
 		text-align: center;
 		line-height: 39px;
@@ -13,7 +16,13 @@
 		grid-auto-rows: 54px;
 		column-gap: 66px;
 		row-gap: 85px;
-		margin: 59px auto 0;
+		margin: 94px auto 0;
+		@media (max-width: 992px) {
+			max-width: 600px;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(8, 54px);
+			column-gap: 120px;
+		}
 	}
 	&__item {
 		position: relative;
@@ -26,19 +35,26 @@
 		align-self: center;
 		justify-self: center;
 	}
-	&__currency {
+	&__currency,
+	&__sum {
 		font-weight: 400;
+		margin-left: 32px;
+		@media (max-width: 1200px) {
+			margin-left: 18px;
+		}
+		@media (max-width: 992px) {
+			margin-left: 32px;
+		}
+	}
+	&__currency {
 		font-size: 16px;
 		line-height: 19px;
 		color: #a4aabf;
-		margin-left: 32px;
 		align-self: center;
 	}
 	&__sum {
-		font-weight: 400;
 		font-size: 20px;
 		line-height: 27px;
 		color: #160647;
-		margin-left: 32px;
 	}
 }
